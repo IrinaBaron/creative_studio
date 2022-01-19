@@ -31,7 +31,7 @@ const resources = () => {
 }
 
 
-const styles = () => {
+const styles = async () => {
   return src(['src/styles/normalize.css','src/styles/style.css'])
     .pipe(init())
     .pipe(write())
@@ -42,10 +42,10 @@ const styles = () => {
 }
 
 
-const html = () => {
+const html = async () => {
   return src('src/**/*.html')
-  .pipe(dest('dist'))
-  .pipe(browserSync.stream())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream())
 }
 
 const htmlMinify = () => {
@@ -103,7 +103,7 @@ const images = () => {
     .pipe(browserSync.stream())
 }
 
-const prebuild = function () {
+const prebuild = async function () {
   const ind = src('src/**/*.html')
     .pipe(dest('dist'))
   const resource = src('src/resources/**')
@@ -119,7 +119,7 @@ const prebuild = function () {
   
 }
 
-const buildM = function () {
+const buildM = async function () {
   const js = src([
     'src/js/**/*.js',
     'src/js/main.js'
@@ -134,7 +134,8 @@ const buildM = function () {
     // .pipe(dest('dist/fonts'))
 }
 
-const watchFiles = () => {
+const watchFiles = async () => {
+  browserSync.watch,
   browserSync.init({
     server: {
       baseDir: 'dist'
@@ -154,6 +155,7 @@ watch([
 watch('src/images/svg/**/*.svg', svgSprites)
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
+// browserSync.init()
 
 // const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
 export const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
