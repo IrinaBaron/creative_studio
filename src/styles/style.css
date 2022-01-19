@@ -1,33 +1,46 @@
 @font-face {
-  font-family: 'larsseit';
-  src: url('../fonts/larsseit-bold-webfont.woff2') format('woff2'),
-       url('../fonts/larsseit-bold-webfont.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'larsseit';
-  src: url('../fonts/larsseit-medium-webfont.woff2') format('woff2'),
-       url('../fonts/larsseit-medium-webfont.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'larsseit';
-  src: url('../fonts/larsseit-webfont.woff2') format('woff2'),
-       url('../fonts/larsseit-webfont.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'larsseit';
-  src: url('../fonts/larsseit-light-webfont.woff2') format('woff2'),
-       url('../fonts/larsseit-light-webfont.woff') format('woff');
+  font-family: 'oswald';
+  src: url('oswald-light-webfont.woff2') format('woff2'),
+       url('oswald-light-webfont.woff') format('woff');
   font-weight: 300;
   font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'oswald';
+  src: url('oswald-regular-webfont.woff2') format('woff2'),
+       url('oswald-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'oswald';
+  src: url('oswald-medium-webfont.woff2') format('woff2'),
+       url('oswald-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'oswald';
+  src: url('oswald-bold-webfont.woff2') format('woff2'),
+       url('oswald-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'open_sans';
+  src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+       url('../fonts/opensans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 html {
@@ -36,7 +49,7 @@ html {
 
 body {
   margin: 0 auto;
-  font-family: 'larsseit', sans-serif;
+  font-family: 'oswald', sans-serif;
   overflow-y: auto;
 }
 
