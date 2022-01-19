@@ -1,5 +1,12 @@
 'use strict';
 // import { src, dest, series, watch, parallel } from 'gulp';
+// function defaultTask(cb) {
+//   // place code for your default task here
+//   cb();
+// }
+
+// export default defaultTask
+import gulp from 'gulp';
 const { series, parallel } = pkg;
 import pkg from 'gulp';
 const { src, dest } = pkg1;
@@ -19,8 +26,12 @@ import pkg2 from 'gulp-sourcemaps';
 import del from 'del';
 // const browserSync = require('browser-sync').create();
 import browserSync from 'browser-sync';
-import { watch } from 'browser-sync';
-
+// import { watch } from 'browser-sync';
+import pkg3 from 'node-notifier';
+const { notify } = pkg3;
+// import { notify } from 'node-notifier';
+import watch from 'gulp-watch';
+browserSync.create();
 const clean = () => {
   return del(['dist'])
 }
@@ -33,8 +44,8 @@ const resources = () => {
 
 const styles = async () => {
   return src(['src/styles/normalize.css','src/styles/style.css'])
-    .pipe(init())
-    .pipe(write())
+    .pipe(pkg2.init())
+    .pipe(pkg2.write())
     .pipe(concat('main.css'))
     .pipe(dest('dist/css'))
     .pipe(browserSync.stream())
@@ -48,7 +59,7 @@ const html = async () => {
     .pipe(browserSync.stream())
 }
 
-const htmlMinify = () => {
+const htmlMinify = async () => {
   return src('src/**/*.html')
     .pipe(htmlMin({
       collapseWhitespace: true,
@@ -58,7 +69,7 @@ const htmlMinify = () => {
 
 }
 
-const svgSprites = () => {
+const svgSprites = async () => {
   return src('src/images/svg/**/*.svg')
     .pipe(svgSprite({
       mode: {
@@ -69,12 +80,12 @@ const svgSprites = () => {
     }))
 }
 
-const scripts = () => {
+const scripts = async () => {
   return src([
     'src/js/**/*.js',
     'src/js/main.js'
   ])
-    .pipe(init())
+    .pipe(pkg2.init())
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -82,8 +93,13 @@ const scripts = () => {
     .pipe(write())
     .pipe(concat('app.js'))
     .pipe(dest('dist/js'))
+   
     .pipe(browserSync.stream())
 }
+
+// const watchGulp = async () => {
+//   return watch('src/styles/**/*.css', styles)
+// }
 
 const fonts = () => {
   return src(['src/fonts/**/*.woff', 'src/fonts/**/*.woff2'])
@@ -115,7 +131,7 @@ const prebuild = async function () {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('dist/css'))
+    .pipe(dest('dist/style'))
   
 }
 
@@ -134,12 +150,27 @@ const buildM = async function () {
     // .pipe(dest('dist/fonts'))
 }
 
+
+
 const watchFiles = async () => {
-  browserSync.watch,
+  watch('src/styles/**/*.css', styles)
+watch('src/**/*.html', htmlMinify)
+watch('src/**/*.html', html)
+watch([
+  'src/images/**/*.jpg',
+  'src/images/**/*.jpeg',
+  'src/images/**/*.png',
+  'src/images/*.svg',
+], images)
+watch('src/images/svg/**/*.svg', svgSprites)
+watch('src/js/**/*.js', scripts)
+watch('src/resources/**', resources)
+  // browserSync.watch,
   browserSync.init({
     server: {
-      baseDir: 'dist'
-    }
+      baseDir: './dist/'
+    },
+    notify: false
   })
 }
 
@@ -160,3 +191,4 @@ watch('src/resources/**', resources)
 // const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
 export const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
 export const build = series(clean, htmlMinify, fonts, images, parallel(prebuild, buildM))
+

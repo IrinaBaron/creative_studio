@@ -2,21 +2,21 @@
 const btnOne = document.querySelector('.btn-one');
 const btnTwo = document.querySelector('.btn-two');
 
-btnOne.addEventListener('click', (e) => {
-  e.preventDefault();
-  btnOne.classList.toggle('active');
-  if(btnTwo.classList.contains('active')) {
-    btnTwo.classList.remove('active');
-  }
-})
+// btnOne.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   btnOne.classList.toggle('active');
+//   if(btnTwo.classList.contains('active')) {
+//     btnTwo.classList.remove('active');
+//   }
+// })
 
-btnTwo.addEventListener('click', (e) => {
-  e.preventDefault();
-  btnTwo.classList.toggle('active');
-  if(btnOne.classList.contains('active')) {
-    btnOne.classList.remove('active');
-  }
-})
+// btnTwo.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   btnTwo.classList.toggle('active');
+//   if(btnOne.classList.contains('active')) {
+//     btnOne.classList.remove('active');
+//   }
+// })
 
 
 
