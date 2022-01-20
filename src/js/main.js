@@ -40,6 +40,10 @@ const swiper = new Swiper('.swiper', {
 
 });
 
+document.querySelector('.contacts__btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('.contacts__more').classList.toggle('show')
+})
 
 // // burger-menu 
 
