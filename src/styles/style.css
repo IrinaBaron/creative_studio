@@ -429,6 +429,12 @@ button:hover {
   width: 50%;
 }
 
+.works__wrap-item:hover .works__subtitle,
+.works__wrap-item:hover .works__more {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-border-green);
+}
+
 .works1 {
   top: 164px;
   right: 0;
@@ -471,6 +477,7 @@ button:hover {
   line-height: 71px;
   letter-spacing: 3.072px;
   color: var(--color-back-footer);
+  transition: text-decoration .4s ease-in-out, text-decoration-color .4s ease-in-out;
 }
 
 .works__desc {
@@ -501,6 +508,7 @@ button:hover {
   line-height: 15px;
   letter-spacing: 0.832px;
   color: var(--color-back-footer);
+  transition: text-decoration .4s ease-in-out, text-decoration-color .4s ease-in-out;
 }
 
 .works1 .works__info {
@@ -535,6 +543,10 @@ button:hover {
 .works2 .works__text {
   padding-left: 174px;
   text-align: left;
+}
+
+.works2 .works__text {
+  margin-bottom: 20px;
 }
 
 .works3 .works__info {
