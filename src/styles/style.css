@@ -386,6 +386,9 @@ button:hover {
 }
 
 /* works */
+.works {
+  min-height: 1989px;
+}
 
 .works__container {
   position: relative;
@@ -421,10 +424,39 @@ button:hover {
   opacity: 1;
 }
 
-.works1 {
+.works__wrap-item {
   position: absolute;
+  width: 50%;
+}
+
+.works1 {
   top: 164px;
   right: 0;
+}
+
+.works2 {
+  top: 525px;
+  left: 0;
+}
+
+.works3 {
+  top: 897px;
+  right: 0;
+}
+
+.works4 {
+  top: 1258px;
+  left: 0;
+}
+
+.works5 {
+  top: 1793px;
+  right: 0;
+  text-align: end;
+}
+
+.works__info {
+  position: relative;
 }
 
 .works__img {
@@ -432,7 +464,7 @@ button:hover {
 }
 
 .works__subtitle {
-  max-width: 402px;
+  max-width: 404px;
   font-style: normal;
   font-weight: 300;
   font-size: 48px;
@@ -453,6 +485,7 @@ button:hover {
 }
 
 .works__text {
+  max-width: 467px;
   font-family: 'OpenSans';
   font-size: 13px;
   line-height: 23px;
@@ -461,9 +494,16 @@ button:hover {
   color: var(--color-gray-text);
 }
 
-.works1 .works__info {
-  position: relative;
+.works__more {
+  padding-left: 174px;
+  font-family: 'OpenSans';
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.832px;
+  color: var(--color-back-footer);
+}
 
+.works1 .works__info {
   padding-bottom: 177px;
   padding-left: 129px;
 }
@@ -477,6 +517,71 @@ button:hover {
 .works1 .works__desc,
 .works1 .works__text {
   padding-right: 125px;
+}
+
+.works2 .works__info {
+  padding-right: 128px;
+  padding-bottom: 137px;
+}
+
+.works2 .works__subtitle {
+  position: absolute;
+  top: 268px;
+  right: 0;
+  max-width: 215px;
+}
+
+.works2 .works__desc,
+.works2 .works__text {
+  padding-left: 174px;
+  text-align: left;
+}
+
+.works3 .works__info {
+  padding-left: 129px;
+}
+
+.works3 .works__subtitle {
+  position: absolute;
+  top: 262px;
+  left: 0;
+}
+
+.works3 .works__desc,
+.works3 .works__text {
+  padding-right: 131px;
+}
+
+.works4 .works__info {
+  padding-right: 154px;
+}
+
+.works4 .works__subtitle {
+  position: absolute;
+  top: 268px;
+  right: 0;
+  max-width: 240px;
+}
+
+.works4 .works__desc,
+.works4 .works__text {
+  padding-left: 174px;
+  text-align: left;
+}
+
+.works__view {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 2px;
+  color: var(--color-back-footer);
+  transition: opacity .4s ease-in-out;
+}
+
+.works__view:hover {
+  opacity: 0.5;
 }
 
 /* footer */
