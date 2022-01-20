@@ -19,11 +19,20 @@ document.addEventListener('click', (e) => {
   }
 
   if(e.target.closest('.team__name')) {
-    
     let parent = e.target.parentElement;
     parent.parentElement.classList.toggle('active')
   }
+
+  if(!e.target.closest('.contacts')) {
+    document.querySelector('.contacts__more').classList.remove('show')
+  }
   
+})
+
+document.addEventListener('dblclick', (e) => {
+  if(e.target.closest('.contacts__list')) {
+    document.querySelector('.contacts__more').classList.remove('show')
+  }
 })
 
 const swiper = new Swiper('.swiper', {
@@ -45,14 +54,4 @@ document.querySelector('.contacts__btn').addEventListener('click', (e) => {
   document.querySelector('.contacts__more').classList.toggle('show')
 })
 
-// // burger-menu 
-
-// const burgerBtn = document.querySelector('.header__burger')
-
-// burgerBtn.addEventListener('click', function () {
-//   burgerBtn.classList.toggle('active');
-//   document.querySelector('.header__nav').classList.toggle('active');
-//   document.querySelector('.contacts__phone').classList.toggle('active')
-//   // document.querySelector('body').classList.toggle('lock');
-// })
 
