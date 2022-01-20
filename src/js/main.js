@@ -6,26 +6,9 @@ let names = document.querySelectorAll('.team__wrap');
 elems.forEach(elem => {
   elem.addEventListener('click', (e) => {
     elem.classList.toggle('active');
+
   })
-
-  // names.forEach(name => {
-  //   name.addEventListener('click', e => {
-      
-  //       console.log('ok')
-  //       elem.classList.toggle('active');
-      
-  //   })
-  // })
 })
-
-// names.forEach(name => {
-//   name.addEventListener('click', e => {
-//     elems.forEach(elem => {
-//       console.log('ok')
-//       elem.classList.toggle('active');
-//     })
-//   })
-// })
 
 document.addEventListener('click', (e) => {
   console.log(e.target)
@@ -34,25 +17,14 @@ document.addEventListener('click', (e) => {
       elem.classList.remove('active');
     })
   }
+
+  if(e.target.closest('.team__name')) {
+    console.log('ok')
+    let parent = e.target.parentElement;
+    parent.parentElement.classList.toggle('active')
+  }
+  
 })
-// const btnOne = document.querySelector('.btn-one');
-// const btnTwo = document.querySelector('.btn-two');
-
-// btnOne.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   btnOne.classList.toggle('active');
-//   if(btnTwo.classList.contains('active')) {
-//     btnTwo.classList.remove('active');
-//   }
-// })
-
-// btnTwo.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   btnTwo.classList.toggle('active');
-//   if(btnOne.classList.contains('active')) {
-//     btnOne.classList.remove('active');
-//   }
-// })
 
 
 
