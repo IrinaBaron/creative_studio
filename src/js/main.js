@@ -11,7 +11,7 @@ elems.forEach(elem => {
 })
 
 document.addEventListener('click', (e) => {
-  console.log(e.target)
+  // console.log(e.target)
   if(!e.target.matches('.team__img')) {
     elems.forEach( elem => {
       elem.classList.remove('active');
@@ -19,14 +19,26 @@ document.addEventListener('click', (e) => {
   }
 
   if(e.target.closest('.team__name')) {
-    console.log('ok')
+    
     let parent = e.target.parentElement;
     parent.parentElement.classList.toggle('active')
   }
   
 })
 
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
 
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
 
 
 // // burger-menu 
