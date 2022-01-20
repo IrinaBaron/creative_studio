@@ -61,6 +61,7 @@ body {
   --color-priority: #4CAF50;
   --color-border-green: #70BF73;
   --color-gray-text: #C2C2C2;
+  --color-background: #FBFBFB;
   /* --color-after: #252525; */
 }
 
@@ -281,7 +282,7 @@ button:hover {
 
 /* services */
 .services {
-  background-color: #FBFBFB;
+  background-color: var(--color-background);
 }
 
 .services__container {
@@ -594,6 +595,86 @@ button:hover {
 
 .works__view:hover {
   opacity: 0.5;
+}
+
+/* .team  */
+
+.team {
+  background-color: var(--color-background);
+}
+
+.team__container {
+  padding-top: 135px;
+  padding-bottom: 167px;
+}
+
+.team__title {
+  margin-bottom: 71px;
+}
+
+.team__list {
+  display: flex;
+}
+
+.team__item {
+  position: relative;
+  cursor: pointer;
+}
+
+.team__item:not(:last-child) {
+  margin-right: 28px;
+}
+
+.team__wrap {
+  position: absolute;
+  bottom: 0;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.team__name {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 1.152px;
+  color: var(--color-back-footer);
+}
+
+.team__item.active .team__name {
+  margin-bottom: 17px;
+}
+
+.team__position {
+  display: none;
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 1.152px;
+  color: var(--color-back-footer);
+}
+
+.team__item.active .team__position {
+  display: block;
+}
+
+.team__text {
+  display: none;
+  font-family: 'OpenSans';
+  font-size: 10px;
+  line-height: 25px;
+  letter-spacing: 1.008px;
+  color: var(--color-gray);
+}
+
+.team__item.active .team__text {
+  display: block;
 }
 
 /* footer */

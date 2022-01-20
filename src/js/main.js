@@ -1,6 +1,42 @@
 
-const btnOne = document.querySelector('.btn-one');
-const btnTwo = document.querySelector('.btn-two');
+
+let elems = document.querySelectorAll('.team__item');
+let names = document.querySelectorAll('.team__wrap');
+
+elems.forEach(elem => {
+  elem.addEventListener('click', (e) => {
+    elem.classList.toggle('active');
+  })
+
+  // names.forEach(name => {
+  //   name.addEventListener('click', e => {
+      
+  //       console.log('ok')
+  //       elem.classList.toggle('active');
+      
+  //   })
+  // })
+})
+
+// names.forEach(name => {
+//   name.addEventListener('click', e => {
+//     elems.forEach(elem => {
+//       console.log('ok')
+//       elem.classList.toggle('active');
+//     })
+//   })
+// })
+
+document.addEventListener('click', (e) => {
+  console.log(e.target)
+  if(!e.target.matches('.team__img')) {
+    elems.forEach( elem => {
+      elem.classList.remove('active');
+    })
+  }
+})
+// const btnOne = document.querySelector('.btn-one');
+// const btnTwo = document.querySelector('.btn-two');
 
 // btnOne.addEventListener('click', (e) => {
 //   e.preventDefault();
