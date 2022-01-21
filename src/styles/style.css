@@ -1271,7 +1271,7 @@ button:hover {
   .title {
     font-size: 34px;
   }
-  
+
   .hero {
     height: auto;
   }
@@ -1336,5 +1336,76 @@ button:hover {
 
   .works__container {
     padding-top: 50px;
+  }
+
+  .works__list {
+    margin-bottom: 20px;
+  }
+
+  .works__wrap-item {
+    position: unset;
+    width: 100%;
+  }
+
+  .works__img {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 294px;
+  }
+
+  .works__subtitle {
+    font-size: 30px;
+    line-height: 41px;
+    max-width: 200px;
+  }
+
+  .works__info {
+    padding-top: 310px;
+  }
+
+  .works1 .works__info {
+    padding-bottom: 50px;
+  }
+
+  .works1 .works__subtitle {
+    top: 40%;
+  } 
+
+  .works1 .works__img {
+    right: 0;
+  }
+
+  .works1 .works__desc, 
+  .works1 .works__text, 
+  .works3 .works__desc, 
+  .works3 .works__text {
+    padding-right: 0;
+  }
+
+  .works2 .works__desc, 
+  .works2 .works__text, 
+  .works4 .works__desc, 
+  .works4 .works__text {
+    padding-left: 0;
+  }
+
+  .works__more {
+    padding-left: 0;
+  }
+
+  .works2 .works__info,
+  .works3 .works__info {
+    padding-bottom: 50px;
+  }
+
+  .works2 .works__subtitle,
+  .works3 .works__subtitle,
+  .works4 .works__subtitle {
+    top: 50%;
+  }
+
+  .works3 .works__img {
+    right: 0;
   }
 }
