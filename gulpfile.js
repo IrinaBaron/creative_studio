@@ -24,9 +24,7 @@ import { onError } from 'gulp-notify';
 const { init, write } = pkg2;
 import pkg2 from 'gulp-sourcemaps';
 import del from 'del';
-// const browserSync = require('browser-sync').create();
 import browserSync from 'browser-sync';
-// import { watch } from 'browser-sync';
 import pkg3 from 'node-notifier';
 const { notify } = pkg3;
 // import { notify } from 'node-notifier';
@@ -38,20 +36,17 @@ const clean = () => {
 
 const resources = () => {
   return src('src/resources/**')
-
 }
 
-
 const styles = async () => {
-  return src(['src/styles/normalize.css','src/styles/style.css'])
+  return src(['src/styles/normalize.css', 'src/styles/style.css'])
     .pipe(pkg2.init())
     .pipe(pkg2.write())
     .pipe(concat('main.css'))
-    .pipe(dest('dist/css'))
+    .pipe(dest('dist/styles'))
     .pipe(browserSync.stream())
 
 }
-
 
 const html = async () => {
   return src('src/**/*.html')
@@ -93,17 +88,13 @@ const scripts = async () => {
     .pipe(write())
     .pipe(concat('app.js'))
     .pipe(dest('dist/js'))
-   
+
     .pipe(browserSync.stream())
 }
 
-// const watchGulp = async () => {
-//   return watch('src/styles/**/*.css', styles)
-// }
-
 const fonts = () => {
   return src(['src/fonts/**/*.woff', 'src/fonts/**/*.woff2'])
-  .pipe(dest('dist/fonts'))
+    .pipe(dest('dist/fonts'))
 }
 
 const images = () => {
@@ -123,7 +114,7 @@ const prebuild = async function () {
   const ind = src('src/**/*.html')
     .pipe(dest('dist'))
   const resource = src('src/resources/**')
-  const css = src(['src/styles/normalize.css','src/styles/**/*.css'])
+  const css = src(['src/styles/normalize.css', 'src/styles/**/*.css'])
     .pipe(concat('main.css'))
     .pipe(autoprefixes({
       cascade: false
@@ -131,8 +122,8 @@ const prebuild = async function () {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('dist/style'))
-  
+    .pipe(dest('dist/styles'))
+
 }
 
 const buildM = async function () {
@@ -146,26 +137,25 @@ const buildM = async function () {
     .pipe(dest('dist/images'))
   const fnt = src(['src/fonts/**/*.woff', 'src/fonts/**/*.woff2'])
     .pipe(dest('dist/fonts'))
-    // return src(['src/fonts/**/*.woff'])
-    // .pipe(dest('dist/fonts'))
+  // return src(['src/fonts/**/*.woff'])
+  // .pipe(dest('dist/fonts'))
 }
 
 
 
 const watchFiles = async () => {
   watch('src/styles/**/*.css', styles)
-watch('src/**/*.html', htmlMinify)
-watch('src/**/*.html', html)
-watch([
-  'src/images/**/*.jpg',
-  'src/images/**/*.jpeg',
-  'src/images/**/*.png',
-  'src/images/*.svg',
-], images)
-watch('src/images/svg/**/*.svg', svgSprites)
-watch('src/js/**/*.js', scripts)
-watch('src/resources/**', resources)
-  // browserSync.watch,
+  watch('src/**/*.html', htmlMinify)
+  watch('src/**/*.html', html)
+  watch([
+    'src/images/**/*.jpg',
+    'src/images/**/*.jpeg',
+    'src/images/**/*.png',
+    'src/images/*.svg',
+  ], images)
+  watch('src/images/svg/**/*.svg', svgSprites)
+  watch('src/js/**/*.js', scripts)
+  watch('src/resources/**', resources)
   browserSync.init({
     server: {
       baseDir: './dist/'
@@ -188,7 +178,7 @@ watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 // browserSync.init()
 
-// const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
+
 export const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
 export const build = series(clean, htmlMinify, fonts, images, parallel(prebuild, buildM))
 

@@ -55,3 +55,8 @@ document.querySelector('.contacts__btn').addEventListener('click', (e) => {
 })
 
 
+document.querySelector('.hero-burger').addEventListener('click', () => {
+  document.querySelector('.hero-burger').classList.toggle('active');
+  document.querySelector('.hero__nav').classList.toggle('active');
+})
+
