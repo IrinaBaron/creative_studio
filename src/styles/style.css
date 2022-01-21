@@ -120,6 +120,16 @@ button:hover {
   background-color: var(--color-back-footer);
 }
 
+.btn__scroll {
+  display: none;
+  padding: 10px;
+  background-color: var(--color-gray);
+  color: var(--color-for-dark);
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
 .hero__burger {
   display: none;
   opacity: 0;

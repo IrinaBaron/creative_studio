@@ -164,20 +164,6 @@ const watchFiles = async () => {
   })
 }
 
-watch('src/styles/**/*.css', styles)
-watch('src/**/*.html', htmlMinify)
-watch('src/**/*.html', html)
-watch([
-  'src/images/**/*.jpg',
-  'src/images/**/*.jpeg',
-  'src/images/**/*.png',
-  'src/images/*.svg',
-], images)
-watch('src/images/svg/**/*.svg', svgSprites)
-watch('src/js/**/*.js', scripts)
-watch('src/resources/**', resources)
-// browserSync.init()
-
 
 export const dev = series(resources, parallel(styles, scripts, html, fonts), svgSprites, images, watchFiles)
 export const build = series(clean, htmlMinify, fonts, images, parallel(prebuild, buildM))
