@@ -255,8 +255,11 @@ button:hover {
   position: absolute;
   top: 130px;
   left: 193px;
+  width: auto;
+  height: auto;
   z-index: 8;
 }
+
 .we__color {
   position: absolute;
   top: 211px;
@@ -976,10 +979,6 @@ button:hover {
   transition: opacity .4s ease-in-out;
 }
 
-.footer__link:hover svg path {
-  fill: var(--color-for-dark);
-}
-
 .footer__link:hover {
   opacity: 0.5;
 }
@@ -1001,3 +1000,183 @@ button:hover {
   opacity: 0.5;
 }
 
+
+/* -------------media---------------- */
+
+@media (max-width: 1200px) {
+  .hero {
+    height: 504px;
+  }
+
+  /* .hero__container {
+    padding-top: 59px;
+    padding-bottom: 55px;
+  } */
+
+  .hero__nav {
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  .hero__item:not(:last-child) {
+    margin-right: 38px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+  }
+
+  .hero__text {
+    font-size: 18px;
+  }
+
+  /* we  */
+
+  .we__container {
+    padding-top: 100px;
+    padding-bottom: 87px;
+    height: 725px;
+  }
+
+  .we__span-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .we__text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .we__img {
+    top: 100px;
+  }
+  
+  .text-two {
+    top: 483px;
+    left: 771px;
+  }
+
+  .we__img,
+  .we__color {
+    width: 259px;
+    height: 340px;
+  }
+
+  .we__color {
+    top: 180px;
+  }
+
+  .img-two {
+    top: 270px;
+  }
+
+  /* .services  */
+  .services__container {
+    padding-top: 85px;
+    padding-bottom: 86px;
+  }
+
+  .services__title {
+    margin-bottom: 57px;
+  }
+
+  .services__wrap {
+    padding: 28px 24px 10px 19px;
+  }
+
+  .services__subtitle {
+    margin-bottom: 18px;
+  }
+
+  .services__subtitle::after {
+    top: 119px;
+  }
+
+  .services__icons {
+    top: 30px;
+    right: 35px;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .services__icons svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .services__text {
+    line-height: 20px;
+  }
+
+  /* .works */
+
+  .works {
+    min-height: 1900px;
+  }
+
+  .works__container {
+    padding-top: 121px;
+    padding-bottom: 73px;
+  }
+
+  .works__title {
+    margin-bottom: 40px;
+  }
+
+  .works__item:not(:last-child) {
+    margin-right: 31px;
+  }
+
+  .works__img {
+    width: 405px;
+    height: 394px;
+  }
+
+  .works__subtitle {
+    font-size: 38px;
+    line-height: 51px;
+  }
+
+  .works1 .works__desc, 
+  .works1 .works__text,
+  .works3 .works__desc, 
+  .works3 .works__text {
+    padding-right: 90px;
+  }
+
+  .works1 .works__info {
+    padding-bottom: 127px;
+    padding-left: 100px;
+  }
+
+  .works2 .works__info {
+    padding-right: 98px;
+    padding-bottom: 107px;
+  }
+
+  .works3 .works__info {
+    padding-left: 100px;
+  }
+
+  .works4 .works__info {
+    padding-right: 98px;
+  }
+
+  .works2,
+  .works4 {
+    left: 15px;
+  }
+
+  .works2 .works__desc, 
+  .works2 .works__text,
+  .works4 .works__desc, 
+  .works4 .works__text {
+    padding-left: 104px;
+  }
+
+  .works__more {
+    padding-left: 104px;
+  }
+}
