@@ -1339,7 +1339,7 @@ button:hover {
   }
 
   .works__list {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .works__wrap-item {
@@ -1407,5 +1407,29 @@ button:hover {
 
   .works3 .works__img {
     right: 0;
+  }
+
+  .team__container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .team__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .reviews__wrap {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .contacts__title {
+    font-size: 18px;
   }
 }
