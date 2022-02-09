@@ -1,11 +1,5 @@
 'use strict';
-// import { src, dest, series, watch, parallel } from 'gulp';
-// function defaultTask(cb) {
-//   // place code for your default task here
-//   cb();
-// }
 
-// export default defaultTask
 import gulp from 'gulp';
 const { series, parallel } = pkg;
 import pkg from 'gulp';

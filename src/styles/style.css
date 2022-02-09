@@ -172,6 +172,10 @@ button:hover {
   transition: color .4s ease-in-out;
 }
 
+.hero__link.focus-visible {
+  color: var(--color-priority);
+}
+
 .hero__link::after {
   content: '';
   position: absolute;
@@ -183,11 +187,11 @@ button:hover {
   transition: width .4s ease-in-out;
 }
 
-/* .hero__link:hover {
-  color: var(--color-priority);
-} */
-
 .hero__link:hover:after {
+  width: 100%;
+}
+
+.hero__link.focus-visible::after {
   width: 100%;
 }
 
@@ -393,12 +397,16 @@ button:hover {
   transition: opacity .4s ease-in-out;
 }
 
+.services__link.focus-visible {
+  color: var(--color-priority);
+  opacity: 1;
+}
+
 .services__item:hover {
   border-bottom: 3px solid var(--color-border-green);
 }
 
 .services__item:hover .services__link {
-  
   opacity: 1;
 }
 .services__item:hover .services__icons svg {
@@ -438,6 +446,11 @@ button:hover {
   color: var(--color-back-footer);
   opacity: 0.3;
   transition: opacity .4s ease-in-out;
+}
+
+.works__link.focus-visible {
+  color: var(--color-priority);
+  opacity: 1;
 }
 
 .works__link:hover {
@@ -531,6 +544,11 @@ button:hover {
   transition: text-decoration .4s ease-in-out, text-decoration-color .4s ease-in-out;
 }
 
+.works__more.focus-visible {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-border-green);
+}
+
 .works1 .works__info {
   padding-bottom: 177px;
   padding-left: 129px;
@@ -610,6 +628,10 @@ button:hover {
   letter-spacing: 2px;
   color: var(--color-back-footer);
   transition: opacity .4s ease-in-out;
+}
+
+.works__view.focus-visible {
+  color: var(--color-priority);
 }
 
 .works__view:hover {
@@ -789,6 +811,7 @@ button:hover {
 .swiper-button-next {
   width: 30px;
   height: 30px;
+  border: 1px solid transparent;
   border-radius: 50px;
   background-image: url('../images/icons/arrow_left.svg');
   background-position: center bottom 50%;
@@ -799,6 +822,12 @@ button:hover {
 
 .swiper-button-next {
   background-image: url('../images/icons/arrow_right.svg');
+}
+
+.swiper-button-prev.focus-visible,
+.swiper-button-next.focus-visible {
+  border-color: var(--color-border-green);
+  background-color: var(--color-background);
 }
 
 .swiper-button-prev:hover,
@@ -893,6 +922,10 @@ button:hover {
   transition: border-color .4s ease-in-out;
 }
 
+.contacts__btn.focus-visible {
+  border-color: var(--color-for-dark);
+}
+
 .contacts__btn:hover {
   border-color: var(--color-for-dark);
 }
@@ -925,6 +958,11 @@ button:hover {
   cursor: pointer;
 }
 
+.contacts__link.focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--color-for-dark);
+}
+
 .contacts__link:hover {
   text-decoration: underline;
   text-decoration-color: var(--color-for-dark);
@@ -950,9 +988,7 @@ button:hover {
 
 
 /* footer */
-/* .footer {
-  background-color: var(--color-back-footer);
-} */
+
 .footer__top {
   padding-top: 142px;
   padding-bottom: 82px;
@@ -993,6 +1029,10 @@ button:hover {
 
 .footer__link {
   transition: opacity .4s ease-in-out;
+}
+
+.footer__link.focus-visible {
+  opacity: 0.5;
 }
 
 .footer__link:hover {

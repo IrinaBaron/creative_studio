@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
   const btnScroll = document.querySelector('.btn__scroll');
   window.addEventListener('scroll', () => {
     let scrollNum = window.pageYOffset;
-    console.log(scrollNum);
 
     if (scrollNum >= '100') {
       btnScroll.style.display = 'block';
